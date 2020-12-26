@@ -9,9 +9,7 @@
  *      and a map (value) of arguments with their corresponding argument type.
  *  */
 
-const exception = require('error');
-
-class interface {
+class Interface {
     constructor(obj) {
         this.obj = obj;
         // TODO method names and their argument list - later refine with optional arg allowance
@@ -19,10 +17,10 @@ class interface {
     }
 
     // reflection map, gets populated by each method
-    get reflection() { return this.reflection; }
-    set reflection(key, value) {
-        if (typeof key === 'string') {
-            this.reflection[key] = value;
+    get getReflection() { return this.reflection; }
+    set addReflection(pair) {
+        if (typeof pair[o] === 'string') {
+            this.reflection[pair[0]] = pair[1];
         } else {
             // TODO run a stacktrace as well as an error msg
             throw new Error('error, method name is not a string...!')
@@ -34,8 +32,15 @@ class interface {
             if (obj === null || obj === undefined) {
                 throw new Error('error, interface object does not exist, or it is null...!')
             } else {
-                //TODO
+                let props = Object.values(obj);
+                props.forEach(element => {
+                    console.log("prop: " + element);
+                    console.log("constructor: " + element.constructor);
+                    console.log("type: " + typeof element);
+                });
             }
         }
     }
 }
+
+module.exports = Interface;
