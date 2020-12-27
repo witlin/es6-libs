@@ -6,15 +6,16 @@ class Car {
         this.year = year;
         this.color = color;
         this.interfaces = new Map();
-        this.start = (ready2run) => {
-            if (ready2run) {
-                console.log("running...");
-            } else { console.log("wasn't ready to run..."); }
-        };
 
         /*** 
-         * Comment or uncomment this section to test by hand
+         * Comment or uncomment either method to test by hand
         */
+
+        // this.start = (ready2run) => {
+        //     if (ready2run) {
+        //         console.log("running...");
+        //     } else { console.log("wasn't ready to run..."); }
+        // };
 
         this.stop = () => {
             if (ready2run) {

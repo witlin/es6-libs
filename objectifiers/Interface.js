@@ -29,9 +29,8 @@ class Interface {
                     let match = orfl.find(item => item.toString() == element.toString());
                     checkedMethods.push(match);
                 });
-                let result = checkedMethods.toString() == this.reflection.toString();
-                if (result) {
-                    console.log(`class ${obj} is a valid implementation of ${this}...`);
+                if (checkedMethods.toString() ==
+                    this.reflection.toString()) {
                     return;
                 } else {
                     throw new Error(`Interface Implementation of ${this}, ${obj}, is not valid...!`);
