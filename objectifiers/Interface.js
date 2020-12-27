@@ -5,42 +5,41 @@
  *      Abstract interface class, not to be instantiated 
  *      but instead to be extended by specific interfaces.
  *  Properties:
- *      reflection -> a map of key,value pairs storing a method name (key), 
- *      and a map (value) of arguments with their corresponding argument type.
+ *      - reflection:
+ *  Methods:
+ *      - verify:
  *  */
 
 class Interface {
-    constructor(obj) {
-        this.obj = obj;
+    constructor() {
         // TODO method names and their argument list - later refine with optional arg allowance
-        this.reflection = new Map();
+        this.reflection;
     }
-
-    // reflection map, gets populated by each method
-    get getReflection() { return this.reflection; }
-    set addReflection(pair) {
-        if (typeof pair[o] === 'string') {
-            this.reflection[pair[0]] = pair[1];
-        } else {
-            // TODO run a stacktrace as well as an error msg
-            throw new Error('error, method name is not a string...!')
-        }
-    }
-
     verify = (obj) => {
-        return () => {
-            if (obj === null || obj === undefined) {
-                throw new Error('error, interface object does not exist, or it is null...!')
-            } else {
-                let props = Object.values(obj);
-                props.forEach(element => {
-                    console.log("prop: " + element);
-                    console.log("constructor: " + element.constructor);
-                    console.log("type: " + typeof element);
+        this.reflection = (Reflect.ownKeys(this))
+            .filter(item => item.toString() != 'verify');
+        let orfl = Reflect.ownKeys(obj);
+        if (orfl === null || orfl === undefined) {
+            throw new Error(`Interface implementation of ${this} 
+                                failed arg object passed is null or undefined...!`);
+        } else {
+            try {
+                let checkedMethods = [];
+                this.reflection.forEach(element => {
+                    let match = orfl.find(item => item.toString() == element.toString());
+                    checkedMethods.push(match);
                 });
+                let result = checkedMethods.toString() == this.reflection.toString();
+                if (result) {
+                    console.log(`class ${obj} is a valid implementation of ${this}...`);
+                    return;
+                } else {
+                    throw new Error(`Interface Implementation of ${this}, ${obj}, is not valid...!`);
+                }
+            } catch (err) {
+                console.error(err.toString());
             }
         }
     }
 }
-
 module.exports = Interface;
