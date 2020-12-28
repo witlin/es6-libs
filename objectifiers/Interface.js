@@ -10,6 +10,8 @@
  *      - public - verify (Object) {void} M:
  *  */
 
+//TODO make reflection a private field
+
 class Interface {
     constructor() {
         // TODO method names and their argument list - later refine with optional arg allowance

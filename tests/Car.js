@@ -1,3 +1,5 @@
+//TODO make fields private, implement the Property API when it's developed.
+
 const IVehicle = require('./IVehicle');
 class Car {
     constructor(make, model, year, color) {

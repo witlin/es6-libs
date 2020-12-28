@@ -5,10 +5,13 @@
  *      Abstract interface class, not to be instantiated 
  *      but instead to be extended by specific interfaces.
  *  Properties:
- *      - private - reflection {array} P:
+ *      - 
  *  Methods:
- *      - public - verify (Object) {void} M:
+ *      - public - start (boolean) {void} M:
+ *      - public - start () {void} M:
  *  */
+
+//TODO make this class a singleton
 
 const Interface = require("../objectifiers/Interface");
 class IVehicle extends Interface {
