@@ -5,9 +5,9 @@
  *      Abstract interface class, not to be instantiated 
  *      but instead to be extended by specific interfaces.
  *  Properties:
- *      - reflection:
+ *      - private - reflection {array} P:
  *  Methods:
- *      - verify:
+ *      - public - verify (Object) {void} M:
  *  */
 
 class Interface {

@@ -11,16 +11,14 @@ class Car {
          * Comment or uncomment either method to test by hand
         */
 
-        // this.start = (ready2run) => {
-        //     if (ready2run) {
-        //         console.log("running...");
-        //     } else { console.log("wasn't ready to run..."); }
-        // };
-
-        this.stop = () => {
+        this.start = (ready2run) => {
             if (ready2run) {
                 console.log("running...");
             } else { console.log("wasn't ready to run..."); }
+        };
+
+        this.stop = () => {
+            console.log("car stopped...");
         };
 
         ////////////////// - INTERFACE LOGIC - //////////////////
