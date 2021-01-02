@@ -1,0 +1,35 @@
+{
+  "name": "es6-libs",
+  "version": "1.0.0",
+  "description": "Utilities to express Object oriented concepts in modern javascript, and abstract any number of features as such.",
+  "main": "Car.js",
+  "directories": {
+    "test": "tests",
+    "objectifiers": "objectifiers"
+  },
+  "scripts": {
+    "compile": "./node_modules/.bin/babel src --out-dir lib",
+    "run": "nodemon ./src/tests/Car.js",
+    "runCompiled": "nodemon ./lib/tests/Car.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witlin/es6-libs.git"
+  },
+  "keywords": [
+    "OOP"
+  ],
+  "author": "Victor Smolinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/witlin/es6-libs/issues"
+  },
+  "homepage": "https://github.com/witlin/es6-libs#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.16.0"
+  },
+  "dependencies": {}
+}
