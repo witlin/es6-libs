@@ -44,8 +44,12 @@ class Car {
     }
 }
 
-////////////////////// - STACK CALL - ///////////////////////////
+////////////////////// - TEST CALL - ///////////////////////////
 var mySuv = new Car('Chevy', 'Tahoe', '2021', 'black');
 console.log(mySuv.getMake());
 console.log(mySuv.getInterfaces());
 console.log("interfaces? " + mySuv._interfaces);
+
+//create a random string
+console.log(Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15));

@@ -2,8 +2,8 @@
  *  Author: Victor Smolinski
  *  Date:   12/20/2020
  *  Description: 
- *      Abstract interface class, not to be instantiated 
- *      but instead to be extended by specific interfaces.
+ *      Real Definition of the Vehicle application programming interface.
+ *      It extends the abstract definition of what an interface is (Interface.js).
  *  Properties:
  *      - 
  *  Methods:
