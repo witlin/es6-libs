@@ -1,4 +1,15 @@
-//TODO make fields private, implement the Property API when it's developed.
+/***
+ *  Author: Victor Smolinski
+ *  Date:   12/20/2020
+ *  Description: 
+ *      Real Definition of the Vehicle application programming interface.
+ *      It extends the abstract definition of what an interface is (Interface.js).
+ *  Properties:
+ *      - 
+ *  Methods:
+ *      - public - start (boolean) {void} M:
+ *      - public - start () {void} M:
+ *  */
 
 const IVehicle = require('./IVehicle');
 class Car {
