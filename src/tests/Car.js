@@ -21,7 +21,7 @@
 
 const IVehicle = require('./IVehicle');
 class Car {
-    constructor(make, model, year, color, a) {
+    constructor(make, model, year, color) {
 
         let _make = make;
         let _model = model;
