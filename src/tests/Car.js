@@ -2,23 +2,26 @@
  *  Author: Victor Smolinski
  *  Date:   12/20/2020
  *  Description: 
- *      Real Definition of the Vehicle application programming interface.
- *      It extends the abstract definition of what an interface is (Interface.js).
+ *      Mockup class of a Car, implementing the IVehicle interface.
  *  Properties:
- *      - 
+ *      - make
+ *      - model
+ *      - year
+ *      - color
+ *      - interfaces
  *  Methods:
- *      - public - start (boolean) {void} M:
- *      - public - start () {void} M:
+ *      - public - getMake () {void} M:
+ *      - public - getModel () {void} M:
+ *      - public - getYear () {void} M:
+ *      - public - getColor () {void} M:
+ *      - public - getInterfaces() {void} M:
+ * 
+ *      TODO - need to add 
  *  */
 
 const IVehicle = require('./IVehicle');
 class Car {
-    constructor(make, model, year, color) {
-        // this.make = make;
-        // this.model = model;
-        // this.year = year;
-        // this.color = color;
-        // this.interfaces = new Map();
+    constructor(make, model, year, color, a) {
 
         let _make = make;
         let _model = model;
@@ -59,8 +62,3 @@ class Car {
 var mySuv = new Car('Chevy', 'Tahoe', '2021', 'black');
 console.log(mySuv.getMake());
 console.log(mySuv.getInterfaces());
-console.log("interfaces? " + mySuv._interfaces);
-
-//create a random string
-console.log(Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15));

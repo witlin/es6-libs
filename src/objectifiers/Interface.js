@@ -22,8 +22,8 @@ class Interface {
             .filter(item => item.toString() != 'verify');
         let orfl = Reflect.ownKeys(obj);
         if (orfl === null || orfl === undefined) {
-            throw new Error(`Interface implementation of ${this} 
-                                failed arg object passed is null or undefined...!`);
+            obj = null;
+            throw new Error(`Interface implementation failed arg object passed is null or undefined...!`);
         } else {
             try {
                 let checkedMethods = [];
@@ -35,7 +35,14 @@ class Interface {
                     this.reflection.toString()) {
                     return;
                 } else {
-                    throw new Error(`Interface Implementation of ${this}, ${obj}, is not valid...!`);
+                    Object.keys(obj).forEach((prop) => {
+                        console.log(prop);
+                        obj[prop] = null;
+                    });
+                    throw new Error(`Interface Implementation is not valid...!
+                        Interface method list: [${this.reflection}] 
+                            != 
+                        Implementation method list: [${checkedMethods}]`);
                 }
             } catch (err) {
                 console.error(err.toString());
