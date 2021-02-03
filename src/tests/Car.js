@@ -65,6 +65,8 @@ class Car {
             console.log("car stopped...");
         };
 
+        this.toString = () => '[Object:Car]';
+
         // verify all the interfaces declared above before returning a new instance of the class
         for (const int of _interfaces) {
             int[1].verify(this);

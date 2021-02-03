@@ -16,7 +16,9 @@ class Interface {
     constructor() {
         // TODO method names and their argument list - later refine with optional arg allowance
         this.reflection;
+        this.toString = () => '[Object:Interface]';
     }
+
     verify = (obj) => {
         this.reflection = (Reflect.ownKeys(this))
             .filter(item => item.toString() != 'verify');
@@ -39,7 +41,7 @@ class Interface {
                         console.log(prop);
                         obj[prop] = null;
                     });
-                    throw new Error(`Interface Implementation is not valid...!
+                    throw new Error(`${this.toString()} Implementation is not valid...!
                         Interface method list: [${this.reflection}] 
                             != 
                         Implementation method list: [${checkedMethods}]`);
