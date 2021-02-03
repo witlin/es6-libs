@@ -23,19 +23,33 @@ const IVehicle = require('./IVehicle');
 class Car {
     constructor(make, model, year, color) {
 
+        //private variables (closures)
         let _make = make;
         let _model = model;
         let _year = year;
         let _color = color;
         let _interfaces = new Map();
 
+        //declare the interfaces to be implemented by this class into a map object
+        _interfaces.set('ivehicle', new IVehicle());
+
+        //getter methods
         this.getMake = () => { return _make; };
         this.getModel = () => { return _model; };
         this.getYear = () => { return _year; };
         this.getColor = () => { return _color; };
-        this.getInterfaces = () => { return _interfaces; };
+        //maps are passed by reference, create a copy of the original map to keep the object private
+        this.getInterfaces = () => {
+            let copy = new Map();
+            copy = _interfaces;
+            return copy;
+        };
 
-        //TODO Make the setters...
+        //setters
+        this.setColor = (c) => {
+            _color = c;
+            return this;
+        }
 
         /*** 
          * Comment or uncomment either method to test by hand
@@ -51,14 +65,15 @@ class Car {
             console.log("car stopped...");
         };
 
-        ////////////////// - INTERFACE LOGIC - //////////////////
-        let ifc = this.getInterfaces();
-        ifc['ivehicle'] = new IVehicle();
-        ifc.ivehicle.verify(this);
+        // verify all the interfaces declared above before returning a new instance of the class
+        for (const int of _interfaces) {
+            int[1].verify(this);
+        }
     }
 }
 
 ////////////////////// - TEST CALL - ///////////////////////////
 var mySuv = new Car('Chevy', 'Tahoe', '2021', 'black');
-console.log(mySuv.getMake());
+console.log(mySuv.getColor());
+console.log(mySuv.setColor('red').getColor());
 console.log(mySuv.getInterfaces());

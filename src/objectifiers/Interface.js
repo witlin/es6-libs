@@ -43,6 +43,7 @@ class Interface {
                         Interface method list: [${this.reflection}] 
                             != 
                         Implementation method list: [${checkedMethods}]`);
+
                 }
             } catch (err) {
                 console.error(err.toString());
