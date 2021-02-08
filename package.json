@@ -8,6 +8,7 @@
     "objectifiers": "objectifiers"
   },
   "scripts": {
+    "test": "jest",
     "compile": "./node_modules/.bin/babel src --out-dir lib",
     "run": "nodemon ./src/tests/Car.js",
     "runCompiled": "nodemon ./lib/tests/Car.js"
@@ -27,9 +28,13 @@
   "homepage": "https://github.com/witlin/es6-libs#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.11",
-    "eslint": "^7.16.0"
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.16.0",
+    "jest": "^26.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^3.6.5"
+  }
 }

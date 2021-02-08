@@ -74,8 +74,4 @@ class Car {
     }
 }
 
-////////////////////// - TEST CALL - ///////////////////////////
-var mySuv = new Car('Chevy', 'Tahoe', '2021', 'black');
-console.log(mySuv.getColor());
-console.log(mySuv.setColor('red').getColor());
-console.log(mySuv.getInterfaces());
+export default Car;
