@@ -22,11 +22,11 @@ class Car {
         this.getModel = () => { return _model; };
         this.getYear = () => { return _year; };
         this.getColor = () => { return _color; };
-        //maps are passed by reference, create a copy of the original map to keep the object private
+
         this.getInterfaces = () => {
-            let copy = new Map();
-            copy = _interfaces;
-            return copy;
+            let cachedInterfaceList = new Map();
+            cachedInterfaceList = _interfaces;
+            return cachedInterfaceList;
         };
 
         //setters
