@@ -1,6 +1,7 @@
 {
   "name": "es6-libs",
   "version": "1.0.0",
+  "type": "module",
   "description": "Utilities to express Object oriented concepts in modern javascript, and abstract any number of features as such.",
   "main": "Car.js",
   "directories": {
@@ -27,14 +28,14 @@
   },
   "homepage": "https://github.com/witlin/es6-libs#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
     "babel-jest": "^26.6.3",
-    "eslint": "^7.16.0",
+    "eslint": "^7.20.0",
     "jest": "^26.6.3"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.9.0"
   }
 }

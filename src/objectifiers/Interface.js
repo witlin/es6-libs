@@ -21,7 +21,8 @@ class Interface {
 
     verify = (obj) => {
         this.reflection = (Reflect.ownKeys(this))
-            .filter(item => item.toString() != 'verify');
+            .filter(item => item.toString() != 'verify')
+            .filter(item => item.toString() != 'reflection');
         let orfl = Reflect.ownKeys(obj);
         if (orfl === null || orfl === undefined) {
             obj = null;
@@ -53,4 +54,4 @@ class Interface {
         }
     }
 }
-module.exports = Interface;
+export default Interface;

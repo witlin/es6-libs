@@ -13,7 +13,7 @@
 
 //TODO make this class a singleton
 
-const Interface = require("../objectifiers/Interface");
+import Interface from "../objectifiers/Interface.js";
 class IVehicle extends Interface {
     constructor() {
         super();
@@ -22,4 +22,4 @@ class IVehicle extends Interface {
     }
 }
 
-module.exports = IVehicle;
+export default IVehicle;

@@ -41,13 +41,11 @@ class Car {
 
         this.start = (ready2run) => {
             if (ready2run) {
-                console.log("car running...");
-            } else { console.log("car wasn't ready to run..."); }
+                console.log("running...");
+            } else { console.log("wasn't ready to run..."); }
         };
 
-        this.stop = () => {
-            console.log("car stopped...");
-        };
+        //Missing the stop() method, should not pass interface test...!
 
         this.toString = () => '[Object:Car]';
 
