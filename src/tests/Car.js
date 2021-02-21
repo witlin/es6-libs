@@ -37,16 +37,20 @@ class Car {
 
         /*** 
          * Comment or uncomment either method to test by hand
-        */
+         */
 
         this.start = (ready2run) => {
+            let result;
             if (ready2run) {
-                console.log("car running...");
-            } else { console.log("car wasn't ready to run..."); }
+                result = "car running...";
+            } else {
+                result = "car wasn't ready to run...";
+            }
+            return result;
         };
 
         this.stop = () => {
-            console.log("car stopped...");
+            return "car stopped...";
         };
 
         this.toString = () => '[Object:Car]';

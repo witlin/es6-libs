@@ -1,34 +1,42 @@
 /***
  *  Author: Victor Smolinski
  *  Date:   12/20/2020
-***/
+ ***/
 
 import Car from './Car.js';
 
-class GoodSuv extends Car {
+class Suv extends Car {
     constructor(make, model, year, color) {
         super(make, model, year, color);
 
         /*** 
          * Comment or uncomment either method to test by hand
-        */
+         */
 
         this.start = (ready2run) => {
+            let result = "";
             if (ready2run) {
-                console.log("Suv is running...");
-            } else { console.log("Suv wasn't ready to run..."); }
+                result = "Suv is running...";
+            } else {
+                r
+                esult = "Suv wasn't ready to run...";
+            }
+            return result;
         };
 
-        this.stop = () => {
-            console.log("Suv stopped...");
-        };
+        // this.stop = () => {
+        //     return "Suv stopped...";
+        // };
 
         this.toString = () => '[Car:GoodSuv]';
-        // verify all the interfaces declared above before returning a new instance of the class
-        for (const int of this.getInterfaces()) {
-            int[1].verify(this);
-        }
+        // verify all the interfaces declared above 
+        // before returning a new instance of the class
+        const ivehicle = this.getInterfaces().get('ivehicle')
+        ivehicle.verify(this);
     }
 }
 
-export default GoodSuv;
+// const mySuv = new Suv('Chevy', 'Tahoe', 2021, 'Silver');
+// console.log(mySuv.stop());
+
+export default Suv;
